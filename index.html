@@ -14,7 +14,6 @@
       --line:rgba(255,255,255,.10);
       --brand:#3b82f6;
       --brand2:#7c3aed;
-      --danger:#fb7185;
       --shadow:0 18px 50px rgba(0,0,0,.35);
       --radius:18px;
       --max:1120px;
@@ -26,6 +25,7 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
@@ -46,25 +46,74 @@
       background:linear-gradient(180deg,rgba(7,11,20,.92),rgba(7,11,20,.55));
       border-bottom:1px solid var(--line);
     }
-    .row{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
-    .logo-img{height:34px;filter:drop-shadow(0 10px 18px rgba(59,130,246,.25))}
-    .nav{display:flex;gap:14px;font-size:14px;color:var(--muted)}
-    .nav a{padding:8px 10px;border-radius:10px}
-    .nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
-
-    /* Buttons */
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      gap:10px;padding:12px 16px;border-radius:14px;
-      font-weight:650;cursor:pointer;transition:.2s;border:0;
+    .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
     }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+    }
+
+    /* Fondo blanco SOLO para el logo */
+    .logo-wrap{
+      background:#ffffff;
+      border-radius:12px;
+      padding:6px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:
+        0 8px 20px rgba(0,0,0,.25),
+        inset 0 0 0 1px rgba(0,0,0,.04);
+    }
+
+    .logo-img{
+      height:28px;
+      width:auto;
+      display:block;
+    }
+
+    .nav{
+      display:flex;
+      gap:14px;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .nav a{
+      padding:8px 10px;
+      border-radius:10px;
+    }
+    .nav a:hover{
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:650;
+      cursor:pointer;
+      border:0;
+    }
+
     .btn-primary{
       color:#06111f;
       background:linear-gradient(135deg,var(--brand),var(--brand2));
       box-shadow:0 14px 40px rgba(59,130,246,.25);
     }
+
     .btn-primary:hover{opacity:.95}
+
     .btn-ghost{
       background:rgba(255,255,255,.06);
       border:1px solid var(--line);
@@ -73,15 +122,34 @@
 
     /* Hero */
     .hero{padding:clamp(36px,6vw,72px) 0}
+
     .hero-grid{
       display:grid;
       grid-template-columns:1.05fr .95fr;
       gap:28px;
     }
-    h1{margin:0 0 12px;font-size:var(--h1);line-height:1.05}
-    p{margin:0;font-size:var(--p);line-height:1.6;color:var(--muted)}
+
+    h1{
+      margin:0 0 12px;
+      font-size:var(--h1);
+      line-height:1.05;
+    }
+
+    p{
+      margin:0;
+      font-size:var(--p);
+      line-height:1.6;
+      color:var(--muted);
+    }
+
     .lead{color:#d6e0ff}
-    .hero-actions{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+
+    .hero-actions{
+      margin-top:18px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
 
     .card{
       background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
@@ -97,54 +165,60 @@
         radial-gradient(700px 300px at 30% 30%, rgba(59,130,246,.18), transparent 65%),
         radial-gradient(700px 300px at 80% 10%, rgba(124,58,237,.14), transparent 65%);
     }
-    .hero-img{width:100%;height:100%;object-fit:cover}
-    .logo-wrap{
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow:
-    0 8px 20px rgba(0,0,0,.25),
-    inset 0 0 0 1px rgba(0,0,0,.04);
-}
 
-.logo-img{
-  height: 28px;
-  width: auto;
-  display: block;
-}
+    .hero-img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
 
-    .meta{padding:14px;display:flex;gap:10px;flex-wrap:wrap;font-size:13px}
+    .meta{
+      padding:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:13px;
+    }
+
     .pill{
-      padding:8px 10px;border-radius:999px;
+      padding:8px 10px;
+      border-radius:999px;
       background:rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.10);
     }
 
-    section{padding:44px 0;border-top:1px solid rgba(255,255,255,.06)}
-    .sec-title{font-size:var(--h2);margin:0 0 10px}
-    .prose{max-width:760px}
-
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-    .panel{
-      padding:18px;border-radius:18px;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
+    section{
+      padding:44px 0;
+      border-top:1px solid rgba(255,255,255,.06);
     }
 
-    .final{text-align:center;padding:64px 0}
+    .sec-title{
+      font-size:var(--h2);
+      margin:0 0 10px;
+    }
+
+    .prose{max-width:760px}
+
+    .final{
+      text-align:center;
+      padding:64px 0;
+    }
+
     .final .box{
-      padding:30px;border-radius:24px;
+      padding:30px;
+      border-radius:24px;
       background:linear-gradient(180deg,rgba(59,130,246,.16),rgba(124,58,237,.12));
       border:1px solid rgba(255,255,255,.14);
       box-shadow:var(--shadow);
-      max-width:860px;margin:0 auto;
+      max-width:860px;
+      margin:0 auto;
     }
 
     .footer{
-      padding:28px 0;font-size:13px;text-align:center;
+      padding:28px 0;
+      font-size:13px;
+      text-align:center;
       color:rgba(233,240,255,.65);
       border-top:1px solid rgba(255,255,255,.06);
     }
@@ -162,14 +236,18 @@
   <div class="wrap">
     <div class="row">
       <div class="brand">
-        <img src="assets/logo-citahero.png" alt="CitaHero" class="logo-img">
+        <div class="logo-wrap">
+          <img src="assets/logo-citahero.png" alt="Logo CitaHero" class="logo-img">
+        </div>
         <span>CitaHero</span>
       </div>
+
       <nav class="nav">
         <a href="#solution">Cómo funciona</a>
         <a href="#audience">Para quién</a>
         <a href="#final">Empezar</a>
       </nav>
+
       <a class="btn btn-primary" href="#final">Automatizar citas</a>
     </div>
   </div>
@@ -183,6 +261,7 @@
       <div>
         <h1>¿Atiendes al paciente<br>o contestas el WhatsApp?</h1>
         <p class="lead">Mientras trabajas, CitaHero gestiona tus citas automáticamente.</p>
+
         <div class="hero-actions">
           <a class="btn btn-primary" href="#final">Quiero automatizar mis citas</a>
           <a class="btn btn-ghost" href="#solution">Ver cómo funciona</a>
@@ -191,7 +270,9 @@
 
       <div class="card">
         <div class="hero-img-wrap">
-          <img src="assets/hero-antes-despues.png" alt="Antes y después con CitaHero" class="hero-img">
+          <img src="assets/hero-antes-despues.png"
+               alt="Antes y después con CitaHero"
+               class="hero-img">
         </div>
         <div class="meta">
           <span class="pill">WhatsApp</span>
@@ -225,7 +306,10 @@
   <div class="wrap">
     <div class="box">
       <h2>Deja de elegir entre atender bien y vender más</h2>
-      <p style="margin-bottom:18px">Automatiza tus citas por WhatsApp y gana tranquilidad.</p>
+      <p style="margin-bottom:18px">
+        Automatiza tus citas por WhatsApp y gana tranquilidad.
+      </p>
+
       <a class="btn btn-primary"
          href="https://wa.me/34722620693?text=Hola%2C%20quiero%20automatizar%20mis%20citas%20con%20CitaHero.%20%C2%BFMe%20ense%C3%B1as%20una%20demo%3F"
          target="_blank" rel="noopener">
@@ -247,5 +331,3 @@
 
 </body>
 </html>
-
-
