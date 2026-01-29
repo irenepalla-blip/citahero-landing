@@ -21,6 +21,7 @@
       --h1:clamp(34px,4.2vw,56px);
       --h2:clamp(22px,2.6vw,32px);
       --p:clamp(16px,1.6vw,18px);
+      --small:clamp(13px,1.3vw,14px);
     }
 
     *{box-sizing:border-box}
@@ -51,6 +52,7 @@
       align-items:center;
       justify-content:space-between;
       padding:14px 0;
+      gap:14px;
     }
 
     .brand{
@@ -58,19 +60,14 @@
       align-items:center;
       gap:10px;
       font-weight:700;
+      min-width:180px;
     }
 
-    /* Fondo blanco SOLO para el logo */
     .logo-wrap{
-      /*background:#ffffff;
-      border-radius:12px;*/
       padding:2px;
       display:flex;
       align-items:center;
       justify-content:center;
-      /*box-shadow:
-        0 8px 20px rgba(0,0,0,.25),
-        inset 0 0 0 1px rgba(0,0,0,.04);*/
     }
 
     .logo-img{
@@ -104,6 +101,7 @@
       font-weight:650;
       cursor:pointer;
       border:0;
+      white-space:nowrap;
     }
 
     .btn-primary{
@@ -127,12 +125,14 @@
       display:grid;
       grid-template-columns:1.05fr .95fr;
       gap:28px;
+      align-items:center;
     }
 
     h1{
       margin:0 0 12px;
       font-size:var(--h1);
       line-height:1.05;
+      letter-spacing:-.02em;
     }
 
     p{
@@ -149,6 +149,31 @@
       display:flex;
       gap:12px;
       flex-wrap:wrap;
+    }
+
+    .microline{
+      margin-top:12px;
+      font-size:var(--small);
+      color:rgba(233,240,255,.78);
+    }
+
+    .microline strong{color:var(--text);font-weight:700}
+    .microdots{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+      color:rgba(233,240,255,.75);
+      font-size:var(--small);
+    }
+    .microdots span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
     }
 
     .card{
@@ -196,9 +221,79 @@
     .sec-title{
       font-size:var(--h2);
       margin:0 0 10px;
+      letter-spacing:-.01em;
     }
 
     .prose{max-width:760px}
+
+    /* How it works blocks */
+    .steps{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:14px;
+    }
+    .step{
+      padding:16px;
+      border-radius:16px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .step .k{
+      font-size:13px;
+      color:rgba(233,240,255,.70);
+      margin-bottom:6px;
+    }
+    .step .t{
+      margin:0;
+      color:var(--text);
+      font-weight:700;
+      font-size:16px;
+      line-height:1.3;
+    }
+
+    .flow{
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+    }
+
+    .flow-row{
+      display:grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap:22px;
+      align-items:center;
+    }
+
+    .shot{
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+    }
+    .shot img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .copy h3{
+      margin:0 0 8px;
+      font-size:18px;
+      color:var(--text);
+      letter-spacing:-.01em;
+    }
+    .copy p{
+      margin:0;
+      color:rgba(233,240,255,.78);
+    }
+    .trustline{
+      margin-top:12px;
+      font-size:var(--small);
+      color:rgba(233,240,255,.72);
+    }
 
     .final{
       text-align:center;
@@ -215,6 +310,12 @@
       margin:0 auto;
     }
 
+    .subcta{
+      margin-top:10px;
+      font-size:var(--small);
+      color:rgba(233,240,255,.72);
+    }
+
     .footer{
       padding:28px 0;
       font-size:13px;
@@ -223,8 +324,12 @@
       border-top:1px solid rgba(255,255,255,.06);
     }
 
-    @media(max-width:900px){
+    @media(max-width:980px){
       .hero-grid{grid-template-columns:1fr}
+      .flow-row{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+    }
+    @media(max-width:900px){
       .nav{display:none}
     }
   </style>
@@ -262,6 +367,18 @@
         <h1>¿Atiendes al paciente<br>o contestas el WhatsApp?</h1>
         <p class="lead">Mientras trabajas, CitaHero gestiona tus citas automáticamente.</p>
 
+        <!-- Frase comodín (muy vendible para Joan + clara para pymes) -->
+        <div class="microline">
+          <strong>CitaHero responde por WhatsApp como si fueras tú</strong>, pero sin interrumpirte.
+        </div>
+
+        <!-- Reducción de riesgo -->
+        <div class="microdots" aria-label="Garantías rápidas">
+          <span>✅ Sin llamadas</span>
+          <span>✅ Sin instalaciones complicadas</span>
+          <span>✅ Te decimos si encaja</span>
+        </div>
+
         <div class="hero-actions">
           <a class="btn btn-primary" href="#final">Quiero automatizar mis citas</a>
           <a class="btn btn-ghost" href="#solution">Ver cómo funciona</a>
@@ -289,6 +406,58 @@
     <div class="prose">
       <h2 class="sec-title">Cómo funciona</h2>
       <p>CitaHero responde, propone horarios y confirma citas mientras tú trabajas.</p>
+
+      <!-- Mini demo mental (3 pasos) -->
+      <div class="steps" role="list" aria-label="Pasos de funcionamiento">
+        <div class="step" role="listitem">
+          <div class="k">1</div>
+          <p class="t">El cliente escribe por WhatsApp</p>
+        </div>
+        <div class="step" role="listitem">
+          <div class="k">2</div>
+          <p class="t">CitaHero responde y propone horarios</p>
+        </div>
+        <div class="step" role="listitem">
+          <div class="k">3</div>
+          <p class="t">La cita queda confirmada automáticamente</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloques con imágenes + copy (los 3 mockups que has creado) -->
+    <div class="flow" aria-label="Ejemplos visuales">
+      <div class="flow-row">
+        <div class="shot">
+          <img src="assets/Presentación_chat.png" alt="CitaHero responde automáticamente desde el primer mensaje">
+        </div>
+        <div class="copy">
+          <h3>Responde al instante, aunque estés ocupado</h3>
+          <p>CitaHero contesta automáticamente por WhatsApp como si fueras tú, desde el primer mensaje.</p>
+          <div class="trustline">Ideal para pymes con mensajes constantes (y fácil de explicar por un colaborador).</div>
+        </div>
+      </div>
+
+      <div class="flow-row">
+        <div class="shot">
+          <img src="assets/Horas_disponibles.png" alt="CitaHero propone horarios disponibles en un solo mensaje">
+        </div>
+        <div class="copy">
+          <h3>Adiós al intercambio infinito de mensajes</h3>
+          <p>Propone horarios disponibles y gestiona la conversación sin interrumpirte.</p>
+          <div class="trustline">Menos “ida y vuelta”. Más citas cerradas.</div>
+        </div>
+      </div>
+
+      <div class="flow-row">
+        <div class="shot">
+          <img src="assets/cita_confirmada.png" alt="Confirmación automática de cita y recordatorio por WhatsApp">
+        </div>
+        <div class="copy">
+          <h3>La cita queda cerrada. Tú sigues trabajando.</h3>
+          <p>La cita se confirma automáticamente y el cliente recibe su recordatorio por WhatsApp.</p>
+          <div class="trustline">Tranquilidad para ti. Claridad para el cliente.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -296,8 +465,11 @@
 <section id="audience">
   <div class="wrap">
     <div class="prose">
-      <h2 class="sec-title">Pensado para negocios por cita</h2>
-      <p>Clínicas estéticas, fisioterapia, centros de belleza y servicios con agenda.</p>
+      <h2 class="sec-title">Pensado para negocios que reciben citas por WhatsApp</h2>
+      <p>Clínicas, centros de belleza, talleres, academias y pymes que trabajan con agenda.</p>
+      <p style="margin-top:10px;color:rgba(233,240,255,.78);font-size:var(--small)">
+        CitaHero se adapta a tu negocio, no al revés.
+      </p>
     </div>
   </div>
 </section>
@@ -315,6 +487,9 @@
          target="_blank" rel="noopener">
         Hablar por WhatsApp
       </a>
+
+      <!-- Subtexto para Joan (partners) + reduce fricción -->
+      <div class="subcta">Para negocios y colaboradores.</div>
     </div>
   </div>
 </section>
@@ -331,7 +506,3 @@
 
 </body>
 </html>
-
-
-
-
