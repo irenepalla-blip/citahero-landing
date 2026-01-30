@@ -332,6 +332,76 @@
     @media(max-width:900px){
       .nav{display:none}
     }
+
+    /* FAQs (cierre de objeciones antes del CTA) */
+    .faq{
+      padding:44px 0;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .faq-grid{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+      max-width:860px;
+    }
+    .faq details{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      padding:14px 16px;
+    }
+    .faq summary{
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      color:var(--text);
+      font-weight:700;
+      font-size:16px;
+      letter-spacing:-.01em;
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary .q{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .faq summary .icon{
+      flex:0 0 auto;
+      width:22px;
+      height:22px;
+      border-radius:8px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(59,130,246,.18);
+      border:1px solid rgba(255,255,255,.12);
+      margin-top:1px;
+      font-size:13px;
+    }
+    .faq summary .chev{
+      flex:0 0 auto;
+      opacity:.75;
+      margin-top:2px;
+    }
+    .faq details[open] summary .chev{
+      transform:rotate(180deg);
+    }
+    .faq .a{
+      margin-top:10px;
+      color:rgba(233,240,255,.78);
+      font-size:var(--small);
+      line-height:1.65;
+    }
+    .faq .a strong{color:var(--text)}
+    .faq .mini{
+      margin-top:12px;
+      font-size:var(--small);
+      color:rgba(233,240,255,.72);
+    }
   </style>
 </head>
 
@@ -474,6 +544,121 @@
   </div>
 </section>
 
+<!-- FAQs (insertadas sin tocar el resto de tu landing) -->
+<section class="faq" id="faqs">
+  <div class="wrap">
+    <div class="prose">
+      <h2 class="sec-title">Preguntas frecuentes</h2>
+      <p>Las dudas típicas antes de automatizar WhatsApp (las mismas que te preguntaría un cliente a una IA).</p>
+    </div>
+
+    <div class="faq-grid" aria-label="Preguntas frecuentes">
+
+      <details>
+        <summary>
+          <span class="q"><span class="icon">?</span> ¿CitaHero sirve para mi negocio o es solo para clínicas?</span>
+          <span class="chev">▾</span>
+        </summary>
+        <div class="a">
+          Sirve para cualquier negocio que reciba <strong>peticiones de cita por WhatsApp</strong>: clínicas, estética, talleres, academias, servicios técnicos y pymes.
+          Si tu cliente suele preguntar “¿tienes hueco?” o “¿cuándo puedo ir?”, aquí encaja perfecto.
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="q"><span class="icon">⚡</span> ¿Responde al instante aunque yo esté atendiendo?</span>
+          <span class="chev">▾</span>
+        </summary>
+        <div class="a">
+          Sí. CitaHero responde en segundos y guía la conversación para cerrar la cita sin que tengas que pausar tu trabajo.
+          <div class="mini">🧠 Esto reduce ansiedad del cliente y evita que se vaya a la competencia.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="q"><span class="icon">🧩</span> ¿Suena “robot” o queda natural?</span>
+          <span class="chev">▾</span>
+        </summary>
+        <div class="a">
+          Se diseña para sonar <strong>humano, corto y claro</strong>. El objetivo es que el cliente piense: “vale, entendido” y siga.
+          Además, los mensajes se pueden ajustar a tu tono (más serio, más cercano, más directo).
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="q"><span class="icon">🕹️</span> ¿Puedo intervenir yo o desactivarlo cuando quiera?</span>
+          <span class="chev">▾</span>
+        </summary>
+        <div class="a">
+          Sí. Tú mantienes el control. Puedes responder tú cuando te apetezca, y CitaHero actúa como “modo asistente” para no perder oportunidades cuando estás ocupado.
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="q"><span class="icon">📅</span> ¿Cómo sabe qué horarios tengo y evita solapes?</span>
+          <span class="chev">▾</span>
+        </summary>
+        <div class="a">
+          CitaHero propone horarios disponibles y confirma la cita siguiendo reglas para evitar cruces.
+          Si hoy gestionas citas con “ida y vuelta” de mensajes, aquí es donde más se nota el cambio.
+          <div class="mini">✅ Menos mensajes · ✅ Más cierres · ✅ Menos errores</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="q"><span class="icon">🔒</span> ¿Es seguro? ¿Qué pasa con mis datos y los del cliente?</span>
+          <span class="chev">▾</span>
+        </summary>
+        <div class="a">
+          La idea es usar solo lo necesario para gestionar la cita (nombre, servicio, horario).
+          Se configura para minimizar datos sensibles y mantener un trato profesional.
+          Si tienes requisitos específicos (por ejemplo, salud), se adapta el flujo para ser más prudente.
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="q"><span class="icon">📲</span> ¿Funciona con WhatsApp Business? ¿Necesito cambiar de número?</span>
+          <span class="chev">▾</span>
+        </summary>
+        <div class="a">
+          Funciona con WhatsApp Business. No necesitas cambiar de número para empezar.
+          Si más adelante quieres escalar (varios agentes, varios números, integraciones), se puede plantear una configuración más avanzada.
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="q"><span class="icon">💬</span> ¿Qué pasa si el cliente escribe algo fuera de lo normal?</span>
+          <span class="chev">▾</span>
+        </summary>
+        <div class="a">
+          El flujo se diseña para reconducir: pedir la info mínima (servicio + día/hora) y confirmar.
+          Si detecta algo que no debe resolver (quejas, urgencias, temas sensibles), se deriva a atención humana.
+          <div class="mini">🧠 “Control percibido” = más confianza y más conversiones.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="q"><span class="icon">🧪</span> ¿Puedo verlo antes en una demo?</span>
+          <span class="chev">▾</span>
+        </summary>
+        <div class="a">
+          Sí. La idea es enseñártelo con tu caso real y decirte rápido si encaja.
+          Si encaja, perfecto. Si no, también: al menos sales con claridad.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
 <section class="final" id="final">
   <div class="wrap">
     <div class="box">
@@ -508,7 +693,3 @@
 
 </body>
 </html>
-
-
-
-
